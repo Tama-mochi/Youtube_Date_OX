@@ -6,8 +6,8 @@
  */
 
 function checkYouTubePosts() {
-  var ss = SpreadsheetApp.openById('1_BPOijXogpbgH1x3sm6jEzbhN1z8zWnKeDbow4WNkX8');
-  var sheet = ss.getSheetByName('hantei_kekka');
+  var ss = SpreadsheetApp.openById('Sheet_ID');
+  var sheet = ss.getSheetByName('Sheet_name');
   if (!sheet) throw new Error('Sheet not found');
 
   var tz = 'Asia/Tokyo';
@@ -29,7 +29,7 @@ function checkYouTubePosts() {
       cell.setValue(found ? 'O' : 'X');
       if (!found) {
         postToDiscord(
-          'https://discord.com/api/webhooks/1349389065115402320/Dq8FWQHWyUJPd2O9oZb-kQm8uEz1_tiDOTT62w7B5z_bQ-cvKt56Fc5Lx7DmNFJ6cLBH',
+          'https://discord.com/api/webhooks/...',
           { content: 'チャンネル @' + name + ' の ' + day + ' の動画が投稿されていません' }
         );
       }
